@@ -461,7 +461,7 @@ checkingAndDownloadingAlsa() {
     curl -o "alsa-lib.tar.bz2" "$ALSA_BUILD_URL"
     curl -o "alsa-lib.tar.bz2.sig" "https://www.alsa-project.org/files/pub/lib/alsa-lib-${ALSA_LIB_VERSION}.tar.bz2.sig"
 
-    setupGpg
+    #setupGpg
 
     # Should we clear this directory up after checking?
     # Would this risk removing anyone's existing dir with that name?
@@ -744,7 +744,7 @@ downloadLinuxDevkit() {
       local devkit_tar="${BUILD_CONFIG[WORKSPACE_DIR]}/${BUILD_CONFIG[WORKING_DIR]}/devkit/devkit.tar.xz"
 
       if [[ -z "${BUILD_CONFIG[USER_DEVKIT_LOCATION]}" ]]; then
-        setupGpg
+        #setupGpg
 
         # Determine DevKit tarball to download for this arch and release
         local devkitUrl="https://github.com/adoptium/devkit-binaries/releases/download/${BUILD_CONFIG[USE_ADOPTIUM_DEVKIT]}"
