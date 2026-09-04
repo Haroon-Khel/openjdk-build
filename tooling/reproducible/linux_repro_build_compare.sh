@@ -434,8 +434,8 @@ buildUsingTemurinBuild() {
   echo "  building within workspace folder: $BUILD_DIR/$BUILD_FOLDER"
 
   # Checkout required temurin-build SHA into BUILD_DIR
-  local repo="https://github.com/adoptium/temurin-build"
-  (cd "$BUILD_DIR" && git init . && git remote add origin "$repo" && { git fetch --depth 1 --filter=blob:none origin "$TEMURIN_BUILD_SHA" || git fetch --depth 1 origin "$TEMURIN_BUILD_SHA"; } && git checkout FETCH_HEAD)
+   local repo="https://github.com/haroon-khel/openjdk-build"
+  (cd "$BUILD_DIR" && git init . && git remote add origin "$repo" && git fetch --depth 1 origin "repro.debug" && git checkout FETCH_HEAD)
 
   echo "Rebuild args for makejdk_any_platform.sh are: $TEMURIN_BUILD_ARGS"
   if ! echo "cd $BUILD_DIR && ./makejdk-any-platform.sh $TEMURIN_BUILD_ARGS > build.log 2>&1" | sh; then
