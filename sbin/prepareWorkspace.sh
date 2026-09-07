@@ -1006,7 +1006,7 @@ function configureWorkspace() {
     createWorkspace
     checkoutAndCloneOpenJDKGitRepo
     downloadingRequiredDependencies
-    #downloadDevkit
+    downloadDevkit
     relocateToTmpIfNeeded
     applyPatches
     if [ "${BUILD_CONFIG[CUSTOM_CACERTS]}" = "true" ] ; then
